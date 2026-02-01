@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NECS 2026 | National Esports Championship Series – Nashville</title>
+<meta name="description" content="NECS 2026 – The National Esports Championship Series. May 8-10 at Bridgestone Arena, Nashville TN. $500K Prize Pool.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div class="loader-screen" id="loader">
+  <img src="images/logo.png" alt="NECS 2026" class="loader-logo">
+  <div class="loader-bar-container"><div class="loader-bar"></div></div>
+  <div class="loader-text">Loading</div>
+</div>
+
+<!-- ========== BACKGROUND EFFECTS ========== -->
+<div class="bg-effects">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+</div>
+<div class="bg-grid"></div>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="images/logo.png" alt="NECS" class="nav-logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#games" class="nav-link">Games</a></li>
+      <li><a href="#teams" class="nav-link">Teams</a></li>
+      <li><a href="#schedule" class="nav-link">Schedule</a></li>
+      <li><a href="#tickets" class="nav-link">Tickets</a></li>
+      <li><a href="#merch" class="nav-link">Merch</a></li>
+      <li><a href="#venue" class="nav-link">Venue</a></li>
+      <li><a href="#music" class="nav-link">Music</a></li>
+      <li><a href="#food" class="nav-link">Food</a></li>
+      <li><a href="#sponsors" class="nav-link">Partners</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 9 18h11v-2H9.42a.25.25 0 0 1-.22-.37L10 14h7a1 1 0 0 0 .9-.55l3.1-6.45H7.42L7 4zM7 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav-login" id="loginBtn" aria-label="Sign in with Google">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        Sign In
+      </button>
+      <a href="#tickets" class="nav-tickets-btn">Get Tickets</a>
+    </div>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+  <a href="#games" class="mobile-nav-link">Games</a>
+  <a href="#teams" class="mobile-nav-link">Teams</a>
+  <a href="#schedule" class="mobile-nav-link">Schedule</a>
+  <a href="#tickets" class="mobile-nav-link">Tickets</a>
+  <a href="#merch" class="mobile-nav-link">Merch</a>
+  <a href="#venue" class="mobile-nav-link">Venue</a>
+  <a href="#music" class="mobile-nav-link">Music</a>
+  <a href="#food" class="mobile-nav-link">Food</a>
+  <a href="#sponsors" class="mobile-nav-link">Partners</a>
+</div>
+
+<!-- ========== GOOGLE LOGIN MODAL ========== -->
+<div class="login-modal" id="loginModal">
+  <div class="login-card">
+    <img src="images/logo.png" alt="NECS 2026" class="login-logo">
+    <h2 class="login-title">Welcome Back</h2>
+    <p class="login-subtitle">Sign in to access your NECS 2026 dashboard, tickets, and more.</p>
+    <button class="google-btn" id="googleSignIn">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      Continue with Google
+    </button>
+    <button class="login-close" id="loginClose">Maybe later</button>
+  </div>
+</div>
+
+<!-- ========== HERO / PHOTO CAROUSEL ========== -->
+<!-- the hero carousel cycles through esports action shots -->
+<section class="hero" id="hero">
+  <div class="hero-carousel" id="heroCarousel">
+    <!-- Slide 1: Esports Arena -->
+    <div class="hero-slide active" data-slide="0">
+      <div class="hero-slide-bg" style="background: linear-gradient(135deg, #0a1628 0%, #1B3A5C 30%, #0F2440 60%, #091A30 100%); width:100%;height:100%; display:flex;align-items:center;justify-content:center;">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.15">
+          <rect x="20" y="40" width="160" height="100" rx="8" stroke="#C9A84C" stroke-width="2"/>
+          <path d="M60 90L80 70L100 85L120 65L140 80" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="100" cy="140" r="8" stroke="#C9A84C" stroke-width="2"/>
+          <rect x="85" y="140" width="30" height="20" rx="4" stroke="#C9A84C" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+    <!-- Slide 2: Nashville Skyline -->
+    <div class="hero-slide" data-slide="1">
+      <div class="hero-slide-bg" style="background: linear-gradient(135deg, #091A30 0%, #1a3050 40%, #2A5580 70%, #0F2440 100%); width:100%;height:100%; display:flex;align-items:center;justify-content:center;">
+        <svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.12">
+          <rect x="30" y="80" width="40" height="80" fill="#C9A84C"/>
+          <rect x="80" y="50" width="30" height="110" fill="#C9A84C"/>
+          <rect x="120" y="30" width="25" height="130" fill="#C9A84C"/>
+          <polygon points="132,30 145,5 158,30" fill="#C9A84C"/>
+          <rect x="155" y="60" width="35" height="100" fill="#C9A84C"/>
+          <rect x="200" y="90" width="40" height="70" fill="#C9A84C"/>
+          <rect x="250" y="70" width="30" height="90" fill="#C9A84C"/>
+          <line x1="0" y1="160" x2="300" y2="160" stroke="#C9A84C" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+    <!-- Slide 3: Gaming Controller -->
+    <div class="hero-slide" data-slide="2">
+      <div class="hero-slide-bg" style="background: linear-gradient(135deg, #0F2440 0%, #1B3A5C 50%, #091A30 100%); width:100%;height:100%; display:flex;align-items:center;justify-content:center;">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.12">
+          <path d="M50 100C50 80 70 60 100 60C130 60 150 80 150 100C150 130 140 150 120 150C110 150 105 140 100 140C95 140 90 150 80 150C60 150 50 130 50 100Z" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="80" cy="95" r="8" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="120" cy="95" r="3" fill="#C9A84C"/>
+          <circle cx="130" cy="85" r="3" fill="#C9A84C"/>
+          <circle cx="110" cy="85" r="3" fill="#C9A84C"/>
+          <circle cx="120" cy="75" r="3" fill="#C9A84C"/>
+          <line x1="75" y1="95" x2="85" y2="95" stroke="#C9A84C" stroke-width="2"/>
+          <line x1="80" y1="90" x2="80" y2="100" stroke="#C9A84C" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+    <!-- Slide 4: Guitar + Music -->
+    <div class="hero-slide" data-slide="3">
+      <div class="hero-slide-bg" style="background: linear-gradient(135deg, #1a2a40 0%, #1B3A5C 40%, #2A5580 70%, #0a1420 100%); width:100%;height:100%; display:flex;align-items:center;justify-content:center;">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.12">
+          <ellipse cx="100" cy="130" rx="35" ry="40" stroke="#C9A84C" stroke-width="2"/>
+          <circle cx="100" cy="130" r="12" stroke="#C9A84C" stroke-width="2"/>
+          <line x1="100" y1="90" x2="100" y2="30" stroke="#C9A84C" stroke-width="3"/>
+          <rect x="90" y="25" width="20" height="10" rx="2" stroke="#C9A84C" stroke-width="2"/>
+          <line x1="94" y1="25" x2="94" y2="15" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="100" y1="25" x2="100" y2="15" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="106" y1="25" x2="106" y2="15" stroke="#C9A84C" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <!-- Right-side indicators -->
+  <div class="hero-indicators">
+    <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+    <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+  </div>
+
+  <!-- Hero text content -->
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>May 8–10, 2026 &bull; Nashville, Tennessee</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="hero-title-gradient">NECS</span><br>
+      <span>2026</span>
+    </h1>
+    <p class="hero-subtitle">Three games. Twelve teams. One legendary weekend in Music City. The National Esports Championship Series returns with a $500,000 prize pool at Bridgestone Arena.</p>
+    <div class="hero-actions">
+      <a href="#tickets" class="btn-hero-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 10V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 1 0 4v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 1 0-4z"/></svg>
+        Get Tickets
+      </a>
+      <a href="#games" class="btn-hero-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Explore Games
+      </a>
+    </div>
+  </div>
+
+  <!-- Countdown strip at bottom -->
+  <div class="hero-countdown-strip">
+    <div class="countdown-inner">
+      <span class="countdown-label">Event Starts In</span>
+      <div class="countdown-boxes">
+        <div class="countdown-box"><div class="countdown-val" id="cd-days">--</div><div class="countdown-unit">Days</div></div>
+        <div class="countdown-box"><div class="countdown-val" id="cd-hrs">--</div><div class="countdown-unit">Hours</div></div>
+        <div class="countdown-box"><div class="countdown-val" id="cd-min">--</div><div class="countdown-unit">Min</div></div>
+        <div class="countdown-box"><div class="countdown-val" id="cd-sec">--</div><div class="countdown-unit">Sec</div></div>
+      </div>
+      <div class="countdown-meta">
+        <div class="countdown-meta-item">
+          <span class="countdown-meta-label">Venue</span>
+          <span class="countdown-meta-value">Bridgestone Arena</span>
+        </div>
+        <div class="countdown-meta-item">
+          <span class="countdown-meta-label">Prize Pool</span>
+          <span class="countdown-meta-value">$500,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED GAMES ========== -->
+<section class="section" id="games">
+  <div class="section-header fade-in">
+    <div class="section-badge">Featured Titles</div>
+    <h2 class="section-title">The Games</h2>
+    <p class="section-subtitle">Three of the biggest competitive titles. One stage. Everything on the line.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="games-grid stagger-children">
+    <!-- Valorant -->
+    <div class="game-card fade-in">
+      <img class="game-card-image" src="images/img-1-f1a1305d46.png" alt="Valorant action scene">
+      <div class="game-card-overlay"></div>
+      <div class="game-card-badge">5v5 Tactical Shooter</div>
+      <div class="game-card-content">
+        <h3 class="game-card-title">Valorant</h3>
+        <div class="game-card-meta">
+          <span><strong>4</strong> Teams</span>
+          <span><strong>$200K</strong> Prize</span>
+          <span><strong>BO5</strong> Grand Finals</span>
+        </div>
+        <p class="game-card-desc">Riot Games' premier tactical shooter. Four of the best teams in North America battle through a double-elimination bracket for the championship title.</p>
+        <button class="game-card-btn" data-game="valorant">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <!-- Rocket League -->
+    <div class="game-card fade-in">
+      <img class="game-card-image" src="images/img-2-828f7bcd7e.png" alt="Rocket League aerial play">
+      <div class="game-card-overlay"></div>
+      <div class="game-card-badge">3v3 Vehicular Soccer</div>
+      <div class="game-card-content">
+        <h3 class="game-card-title">Rocket League</h3>
+        <div class="game-card-meta">
+          <span><strong>4</strong> Teams</span>
+          <span><strong>$150K</strong> Prize</span>
+          <span><strong>BO7</strong> Grand Finals</span>
+        </div>
+        <p class="game-card-desc">High-octane car soccer at its finest. Four elite squads compete in a thrilling double-elimination bracket with aerial plays and clutch overtime goals.</p>
+        <button class="game-card-btn" data-game="rocket">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <!-- Super Smash Bros -->
+    <div class="game-card fade-in">
+      <img class="game-card-image" src="images/img-3-fcdd53f857.png" alt="Super Smash Bros. Ultimate showdown">
+      <div class="game-card-overlay"></div>
+      <div class="game-card-badge">1v1 Fighting</div>
+      <div class="game-card-content">
+        <h3 class="game-card-title">Super Smash Bros. Ultimate</h3>
+        <div class="game-card-meta">
+          <span><strong>4</strong> Players</span>
+          <span><strong>$150K</strong> Prize</span>
+          <span><strong>BO5</strong> Grand Finals</span>
+        </div>
+        <p class="game-card-desc">Nintendo's legendary platform fighter. Four top-ranked players clash in an intense double-elimination singles bracket with stocks on the line.</p>
+        <button class="game-card-btn" data-game="smash">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GAME DETAILS (SECONDARY PAGES) ========== -->
+<div class="game-detail-overlay" id="gameDetailOverlay"></div>
+
+<section class="game-detail-page" data-game-detail="rocket" aria-hidden="true">
+  <div class="game-detail-inner">
+    <button class="game-detail-back" type="button" data-game-back>&larr; Back</button>
+    <h2 class="game-detail-title">RLCS Championship</h2>
+    <p class="game-detail-subtitle">Fast matches &bull; aerial plays &bull; nonstop momentum swings</p>
+
+    <div class="game-detail-hero">
+      <img src="images/img-2-828f7bcd7e.png" alt="Rocket League championship match">
+      <div class="game-detail-hero-content">
+        <span class="game-detail-pill">NECS 2026 &bull; Nashville</span>
+        <div class="game-detail-actions">
+          <button class="game-detail-btn outline" type="button">Follow Updates</button>
+          <a class="game-detail-btn primary" href="#tickets">Get Tickets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-detail-grid">
+      <div>
+        <h3 class="game-detail-section-title">Quick Facts</h3>
+        <ul class="game-detail-facts">
+          <li><span>Teams</span><strong>4</strong></li>
+          <li><span>Prize</span><strong>$150,000</strong></li>
+          <li><span>Style</span><strong>Best-of Series</strong></li>
+          <li><span>Stage</span><strong>Arena / Featured</strong></li>
+          <li><span>Format</span><strong>Double Elimination</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="game-detail-section-title">What to Expect</h3>
+        <p class="game-detail-text">Rocket League is the perfect mix of speed, precision, and creativity. Expect rapid rotations, clutch saves, and overtime thrillers as teams battle for the NECS trophy.</p>
+        <div class="game-detail-tip">
+          <span class="game-detail-tip-label">Pro Tip</span>
+          <p>Get to your seats early for the opener — the crowd energy is unreal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="game-detail-page" data-game-detail="valorant" aria-hidden="true">
+  <div class="game-detail-inner">
+    <button class="game-detail-back" type="button" data-game-back>&larr; Back</button>
+    <h2 class="game-detail-title">Valorant Masters</h2>
+    <p class="game-detail-subtitle">Tactical executes &bull; clutch moments &bull; precision aim</p>
+
+    <div class="game-detail-hero">
+      <img src="images/img-1-f1a1305d46.png" alt="Valorant stage highlight">
+      <div class="game-detail-hero-content">
+        <span class="game-detail-pill">NECS 2026 &bull; Nashville</span>
+        <div class="game-detail-actions">
+          <button class="game-detail-btn outline" type="button">Follow Updates</button>
+          <a class="game-detail-btn primary" href="#tickets">Get Tickets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-detail-grid">
+      <div>
+        <h3 class="game-detail-section-title">Quick Facts</h3>
+        <ul class="game-detail-facts">
+          <li><span>Teams</span><strong>4</strong></li>
+          <li><span>Prize</span><strong>$200,000</strong></li>
+          <li><span>Style</span><strong>5v5 Tactical</strong></li>
+          <li><span>Stage</span><strong>Prime Arena</strong></li>
+          <li><span>Format</span><strong>Double Elimination</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="game-detail-section-title">What to Expect</h3>
+        <p class="game-detail-text">Expect slow builds into explosive executes, highlight reel clutches, and the loudest crowd reactions when rounds swing.</p>
+        <div class="game-detail-tip">
+          <span class="game-detail-tip-label">Pro Tip</span>
+          <p>Watch the utility usage — it sets up the biggest plays.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="game-detail-page" data-game-detail="smash" aria-hidden="true">
+  <div class="game-detail-inner">
+    <button class="game-detail-back" type="button" data-game-back>&larr; Back</button>
+    <h2 class="game-detail-title">Smash Ultimate Showdown</h2>
+    <p class="game-detail-subtitle">Explosive combos &bull; crowd roars &bull; championship stocks</p>
+
+    <div class="game-detail-hero">
+      <img src="images/img-3-fcdd53f857.png" alt="Smash Ultimate finals">
+      <div class="game-detail-hero-content">
+        <span class="game-detail-pill">NECS 2026 &bull; Nashville</span>
+        <div class="game-detail-actions">
+          <button class="game-detail-btn outline" type="button">Follow Updates</button>
+          <a class="game-detail-btn primary" href="#tickets">Get Tickets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-detail-grid">
+      <div>
+        <h3 class="game-detail-section-title">Quick Facts</h3>
+        <ul class="game-detail-facts">
+          <li><span>Players</span><strong>4</strong></li>
+          <li><span>Prize</span><strong>$150,000</strong></li>
+          <li><span>Style</span><strong>Singles</strong></li>
+          <li><span>Stage</span><strong>Center Stage</strong></li>
+          <li><span>Format</span><strong>Double Elimination</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="game-detail-section-title">What to Expect</h3>
+        <p class="game-detail-text">Fast neutral exchanges, huge punishes, and the most electric crowd moments when a comeback is on the line.</p>
+        <div class="game-detail-tip">
+          <span class="game-detail-tip-label">Pro Tip</span>
+          <p>Stick around for Top 8 — it always delivers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== TEAMS - G2 Inspired ========== -->
+<section class="section" id="teams">
+  <div class="section-header fade-in">
+    <div class="section-badge">Competitors</div>
+    <h2 class="section-title">Meet the Teams</h2>
+    <p class="section-subtitle">Twelve teams and players from across North America competing for glory.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="teams-tabs fade-in">
+    <button class="teams-tab active" data-game="all">All</button>
+    <button class="teams-tab" data-game="valorant">Valorant</button>
+    <button class="teams-tab" data-game="rl">Rocket League</button>
+    <button class="teams-tab" data-game="ssbu">Smash Bros</button>
+  </div>
+
+  <div class="teams-grid stagger-children" id="teamsGrid">
+    <!-- Valorant Teams -->
+    <div class="team-card fade-in" data-team-game="valorant"><div class="team-logo">SN</div><div class="team-name">Sentinels</div><div class="team-region">NA West</div><div class="team-seed">#1 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="valorant"><div class="team-logo">C9</div><div class="team-name">Cloud9</div><div class="team-region">NA East</div><div class="team-seed">#2 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="valorant"><div class="team-logo">100</div><div class="team-name">100 Thieves</div><div class="team-region">NA West</div><div class="team-seed">#3 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="valorant"><div class="team-logo">NRG</div><div class="team-name">NRG</div><div class="team-region">NA East</div><div class="team-seed">#4 Seed</div></div>
+
+    <!-- Rocket League Teams -->
+    <div class="team-card fade-in" data-team-game="rl"><div class="team-logo">G2</div><div class="team-name">G2 Stride</div><div class="team-region">NA</div><div class="team-seed">#1 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="rl"><div class="team-logo">GN</div><div class="team-name">Gen.G</div><div class="team-region">NA</div><div class="team-seed">#2 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="rl"><div class="team-logo">FZ</div><div class="team-name">FaZe Clan</div><div class="team-region">NA</div><div class="team-seed">#3 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="rl"><div class="team-logo">SSG</div><div class="team-name">Spacestation</div><div class="team-region">NA</div><div class="team-seed">#4 Seed</div></div>
+
+    <!-- Smash Bros Players -->
+    <div class="team-card fade-in" data-team-game="ssbu"><div class="team-logo">MK</div><div class="team-name">MKLeo</div><div class="team-region">Mexico</div><div class="team-seed">#1 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="ssbu"><div class="team-logo">AC</div><div class="team-name">Acola</div><div class="team-region">Japan</div><div class="team-seed">#2 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="ssbu"><div class="team-logo">SP</div><div class="team-name">Sparg0</div><div class="team-region">Mexico</div><div class="team-seed">#3 Seed</div></div>
+    <div class="team-card fade-in" data-team-game="ssbu"><div class="team-logo">LT</div><div class="team-name">Light</div><div class="team-region">USA</div><div class="team-seed">#4 Seed</div></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== SCHEDULE ========== -->
+<section class="section" id="schedule">
+  <div class="section-header fade-in">
+    <div class="section-badge">Event Schedule</div>
+    <h2 class="section-title">Three Days of Competition</h2>
+    <p class="section-subtitle">All times Central (Nashville local time).</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="schedule-days fade-in">
+    <button class="schedule-day-btn active" data-day="1">Day 1 — Fri May 8</button>
+    <button class="schedule-day-btn" data-day="2">Day 2 — Sat May 9</button>
+    <button class="schedule-day-btn" data-day="3">Day 3 — Sun May 10</button>
+  </div>
+
+  <div id="scheduleContent">
+    <!-- Day 1 -->
+    <div class="schedule-list" data-schedule-day="1">
+      <div class="schedule-item fade-in"><div class="schedule-time">10:00 AM</div><div class="schedule-match-info"><div class="schedule-match-title">Opening Ceremony</div><div class="schedule-match-detail">Welcome show, live music, and team introductions</div></div><span class="schedule-game-badge badge-val">ALL GAMES</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">11:00 AM</div><div class="schedule-match-info"><div class="schedule-match-title">Valorant — Round of 8</div><div class="schedule-match-detail">Upper Bracket Quarter-Finals (BO3)</div></div><span class="schedule-game-badge badge-val">VAL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">1:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Rocket League — Round of 8</div><div class="schedule-match-detail">Upper Bracket Quarter-Finals (BO5)</div></div><span class="schedule-game-badge badge-rl">RL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">3:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Smash Bros. — Pools</div><div class="schedule-match-detail">Top 8 Qualifier Round Robin</div></div><span class="schedule-game-badge badge-ssbu">SSBU</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">6:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Valorant — Upper Semis</div><div class="schedule-match-detail">Upper Bracket Semi-Finals (BO3)</div></div><span class="schedule-game-badge badge-val">VAL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">8:30 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Concert — Opening Night</div><div class="schedule-match-detail">Live performance on the main stage</div></div><span class="schedule-game-badge" style="background:rgba(201,168,76,0.15);color:#C9A84C;border:1px solid rgba(201,168,76,0.3);">MUSIC</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+    </div>
+    <!-- Day 2 -->
+    <div class="schedule-list" data-schedule-day="2" style="display:none;">
+      <div class="schedule-item fade-in"><div class="schedule-time">10:00 AM</div><div class="schedule-match-info"><div class="schedule-match-title">Rocket League — Upper Semis</div><div class="schedule-match-detail">Upper Bracket Semi-Finals (BO5)</div></div><span class="schedule-game-badge badge-rl">RL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">12:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Valorant — Lower Bracket</div><div class="schedule-match-detail">Lower Bracket Rounds (BO3)</div></div><span class="schedule-game-badge badge-val">VAL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">2:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Smash Bros. — Top 8</div><div class="schedule-match-detail">Championship Bracket begins (BO5)</div></div><span class="schedule-game-badge badge-ssbu">SSBU</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">4:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Rocket League — Lower Bracket</div><div class="schedule-match-detail">Lower Bracket Rounds (BO5)</div></div><span class="schedule-game-badge badge-rl">RL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">7:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Valorant — Upper Finals</div><div class="schedule-match-detail">Upper Bracket Final (BO5)</div></div><span class="schedule-game-badge badge-val">VAL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">9:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Concert — Saturday Night Live</div><div class="schedule-match-detail">Headliner performance</div></div><span class="schedule-game-badge" style="background:rgba(201,168,76,0.15);color:#C9A84C;border:1px solid rgba(201,168,76,0.3);">MUSIC</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+    </div>
+    <!-- Day 3 -->
+    <div class="schedule-list" data-schedule-day="3" style="display:none;">
+      <div class="schedule-item fade-in"><div class="schedule-time">11:00 AM</div><div class="schedule-match-info"><div class="schedule-match-title">Smash Bros. — Grand Finals</div><div class="schedule-match-detail">Championship Match (BO5, bracket reset)</div></div><span class="schedule-game-badge badge-ssbu">SSBU</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">1:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Rocket League — Grand Finals</div><div class="schedule-match-detail">Championship Match (BO7, bracket reset)</div></div><span class="schedule-game-badge badge-rl">RL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">3:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Valorant — Lower Final</div><div class="schedule-match-detail">Lower Bracket Final (BO5)</div></div><span class="schedule-game-badge badge-val">VAL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">5:30 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Valorant — Grand Finals</div><div class="schedule-match-detail">Championship Match (BO5, bracket reset)</div></div><span class="schedule-game-badge badge-val">VAL</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+      <div class="schedule-item fade-in"><div class="schedule-time">8:00 PM</div><div class="schedule-match-info"><div class="schedule-match-title">Award Ceremony & Closing</div><div class="schedule-match-detail">Trophy presentations, highlights, and farewell concert</div></div><span class="schedule-game-badge" style="background:rgba(201,168,76,0.15);color:#C9A84C;border:1px solid rgba(201,168,76,0.3);">FINALE</span><div class="schedule-status status-upcoming">Upcoming</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== TICKETS ========== -->
+<section class="section" id="tickets">
+  <div class="section-header fade-in">
+    <div class="section-badge">Secure Your Spot</div>
+    <h2 class="section-title">Ticket Options</h2>
+    <p class="section-subtitle tickets-subtitle">All passes include venue entry and main stage access.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="tickets-grid stagger-children">
+    <div class="ticket-card fade-in">
+    <div class="ticket-tier">Day Pass</div>
+    <div class="ticket-price"><sup>$</sup>45<span class="ticket-price-suffix">/day</span></div>
+    <div class="ticket-per">Single day or $99 weekend pass</div>
+      <ul class="ticket-features">
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Main arena seating</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> All match access</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Food court access</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Merch area access</li>
+      </ul>
+    <button class="ticket-btn ticket-btn-outline" onclick="showToast('Redirecting to checkout...')">Add to Cart</button>
+    </div>
+
+    <div class="ticket-card featured fade-in">
+    <div class="ticket-tier">Full Event Pass</div>
+    <div class="ticket-price"><sup>$</sup>149</div>
+    <div class="ticket-per">All 3 days access</div>
+      <ul class="ticket-features">
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Front-section seating</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Exclusive lounge access</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Free event t-shirt</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Priority food &amp; drink</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Meet &amp; greet passes</li>
+      </ul>
+    <button class="ticket-btn ticket-btn-primary" onclick="showToast('Redirecting to checkout...')">Add to Cart</button>
+    </div>
+
+    <div class="ticket-card fade-in">
+    <div class="ticket-tier">VIP Experience</div>
+    <div class="ticket-price"><sup>$</sup>399</div>
+    <div class="ticket-per">All 3 days premium access</div>
+      <ul class="ticket-features">
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Floor seating + stage access</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> VIP backstage lounge</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> All merch bundle included</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Player autograph sessions</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Complimentary catering</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Private viewing suite</li>
+      </ul>
+    <button class="ticket-btn ticket-btn-outline" onclick="showToast('Redirecting to checkout...')">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== MERCH ========== -->
+<section class="section" id="merch">
+  <div class="section-header fade-in">
+    <div class="section-badge">Official Gear</div>
+    <h2 class="section-title">Merch Drop</h2>
+    <p class="section-subtitle">Rep NECS 2026 with exclusive Nashville-edition merchandise.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="merch-grid stagger-children">
+    <div class="merch-card smash fade-in">
+      <div class="merch-visual">
+        <img src="images/ssbumerch.png" alt="Smash Collage Tee">
+      </div>
+      <div class="merch-content">
+        <div class="merch-title">Smash Collage Tee</div>
+        <div class="merch-desc">Full-print character collage with a tournament-ready fit.</div>
+        <div class="merch-meta">
+          <div class="merch-price">$45</div>
+          <div class="merch-pill">Smash</div>
+        </div>
+        <button class="merch-btn add-to-cart" data-item="Smash Collage Tee" data-price="45">Add to Cart</button>
+      </div>
+    </div>
+    <div class="merch-card rocket fade-in">
+      <div class="merch-visual">
+        <img src="images/rocketleaguemerch.png" alt="Rocket League Glow Hoodie">
+      </div>
+      <div class="merch-content">
+        <div class="merch-title">Rocket League Glow Hoodie</div>
+        <div class="merch-desc">Midnight fleece with neon crest, inspired by aerial plays.</div>
+        <div class="merch-meta">
+          <div class="merch-price">$79</div>
+          <div class="merch-pill">Rocket</div>
+        </div>
+        <button class="merch-btn primary add-to-cart" data-item="Rocket League Glow Hoodie" data-price="79">Add to Cart</button>
+      </div>
+    </div>
+    <div class="merch-card valorant fade-in">
+      <div class="merch-visual">
+        <img src="images/valorantmerch.png" alt="Valorant Champions Jersey">
+      </div>
+      <div class="merch-content">
+        <div class="merch-title">Valorant Champions Jersey</div>
+        <div class="merch-desc">Gradient 2024 jersey with champion crest and sleeve graphics.</div>
+        <div class="merch-meta">
+          <div class="merch-price">$89</div>
+          <div class="merch-pill">Valorant</div>
+        </div>
+        <button class="merch-btn add-to-cart" data-item="Valorant Champions Jersey" data-price="89">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== VENUE ========== -->
+<section class="section" id="venue">
+  <div class="section-header fade-in">
+    <div class="section-badge">The Arena</div>
+    <h2 class="section-title">Bridgestone Arena</h2>
+    <p class="section-subtitle">Nashville's premier entertainment venue, home to the Predators and Music City's biggest events.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="venue-grid">
+    <div class="venue-image-container fade-in-left">
+      <div class="venue-image" style="background:linear-gradient(135deg,#0a1628 0%,#1B3A5C 30%,#2A5580 60%,#0F2440 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">
+        <svg width="120" height="80" viewBox="0 0 120 80" fill="none" style="opacity:0.3">
+          <rect x="10" y="20" width="100" height="50" rx="6" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M10 30 L60 10 L110 30" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+          <rect x="45" y="45" width="30" height="25" rx="2" stroke="#C9A84C" stroke-width="1"/>
+          <line x1="0" y1="70" x2="120" y2="70" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+        </svg>
+        <span style="font-family:var(--font-display);font-size:18px;color:var(--gold);opacity:0.5;letter-spacing:4px;">BRIDGESTONE ARENA</span>
+      </div>
+    </div>
+    <div class="fade-in-right">
+      <h3 class="venue-info-title">Heart of Music City</h3>
+      <p class="venue-info-text">Located right on Broadway in downtown Nashville, Bridgestone Arena puts you steps away from honky tonks, hot chicken, and the best nightlife in the South. With 20,000 seats, a state-of-the-art production setup, and parking on every corner, it's the perfect home for NECS 2026.</p>
+      <div class="venue-details">
+        <div class="venue-detail"><div class="venue-detail-icon">📍</div><div class="venue-detail-text">501 Broadway<br>Nashville, TN 37203</div></div>
+        <div class="venue-detail"><div class="venue-detail-icon">🪑</div><div class="venue-detail-text">20,000<br>Seat Capacity</div></div>
+        <div class="venue-detail"><div class="venue-detail-icon">📶</div><div class="venue-detail-text">Free Wi-Fi<br>Dedicated Streaming</div></div>
+        <div class="venue-detail"><div class="venue-detail-icon">🅿️</div><div class="venue-detail-text">Parking<br>Multiple Garages</div></div>
+      </div>
+      <button class="venue-learn-more" id="venueLearnMore" type="button">Learn More</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VENUE DETAILS MODAL ========== -->
+<div class="venue-modal-overlay" id="venueModalOverlay"></div>
+<div class="venue-modal" id="venueModal" role="dialog" aria-modal="true" aria-label="Venue details">
+  <div class="venue-modal-header">
+    <div>
+      <div class="venue-modal-title">Bridgestone Arena</div>
+      <div class="venue-modal-subtitle">Venue Information</div>
+    </div>
+    <button class="venue-modal-close" id="venueModalClose" aria-label="Close venue details">&times;</button>
+  </div>
+
+  <div class="venue-modal-hero">
+    <div class="venue-modal-hero-text">
+      <h3>World-class venue in the heart of downtown Nashville</h3>
+      <p>State-of-the-art production, premium viewing angles, and a full esports stage build make Bridgestone Arena the perfect home for NECS 2026.</p>
+    </div>
+    <button class="venue-modal-video" type="button">Click to Watch Arena Video</button>
+  </div>
+
+  <div class="venue-modal-grid">
+    <div class="venue-modal-card">
+      <h4>Venue Details</h4>
+      <ul>
+        <li><strong>Location</strong> 501 Broadway, Nashville, TN 37203</li>
+        <li><strong>Capacity</strong> 19,395 for esports events</li>
+        <li><strong>Parking</strong> Multiple garages within 2 blocks, $20–30</li>
+        <li><strong>Accessibility</strong> ADA compliant, elevators throughout</li>
+      </ul>
+    </div>
+    <div class="venue-modal-card">
+      <h4>Arena Features</h4>
+      <ul>
+        <li><strong>4K Displays</strong> Center-hung scoreboard and ribbon boards</li>
+        <li><strong>Pro Gaming Setup</strong> Stage stations + warmup rooms</li>
+        <li><strong>Premium Audio</strong> Arena-wide sound system</li>
+        <li><strong>Free Wi-Fi</strong> High-speed throughout venue</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="venue-modal-grid three">
+    <div class="venue-modal-card">
+      <h4>Parking</h4>
+      <p>Multiple parking garages within walking distance. VIP pass includes complimentary parking.</p>
+    </div>
+    <div class="venue-modal-card">
+      <h4>Public Transit</h4>
+      <p>MTA bus routes 3, 4, 7, and 18 stop near the arena. WeGo Star commuter rail also available.</p>
+    </div>
+    <div class="venue-modal-card">
+      <h4>Rideshare</h4>
+      <p>Designated Uber/Lyft pickup and drop-off zones on 5th Avenue South entrance.</p>
+    </div>
+  </div>
+
+  <div class="venue-modal-card wide">
+    <h4>Accessibility Services</h4>
+    <p>Bridgestone Arena is fully ADA compliant with wheelchair accessible seating, restrooms, and entrances throughout the venue.</p>
+    <ul>
+      <li>Wheelchair accessible seating available in all price tiers</li>
+      <li>Assistive listening devices available at Guest Services</li>
+      <li>Service animals welcome</li>
+      <li>Accessible parking in adjacent garages</li>
+      <li>Elevators provide access to all levels</li>
+    </ul>
+    <p>For specific accessibility needs, contact accessibility@necs26.com</p>
+  </div>
+
+  <div class="venue-modal-card wide">
+    <h4>Nearby Hotels</h4>
+    <div class="venue-hotels-grid">
+      <div><strong>Omni Nashville Hotel</strong><span>0.2 miles • Connected via skybridge</span></div>
+      <div><strong>Renaissance Nashville</strong><span>0.3 miles • 5 min walk</span></div>
+      <div><strong>Hilton Nashville Downtown</strong><span>0.4 miles • 8 min walk</span></div>
+      <div><strong>Hyatt Place Nashville</strong><span>0.5 miles • 10 min walk</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ========== MUSIC ========== -->
+<section class="section" id="music">
+  <div class="music-topline fade-in">Music that will play throughout the event</div>
+
+  <div class="music-tabs fade-in">
+    <button class="music-tab active" data-music-tab="hype">Hype and Gaming</button>
+    <button class="music-tab" data-music-tab="country">Nashville Country</button>
+    <button class="music-tab" data-music-tab="pop">Pop Hits</button>
+  </div>
+
+  <div class="music-playlists">
+    <div class="music-list active" data-music-list="hype">
+      <div class="music-track"><span class="music-rank">1</span><div><div class="music-title">Warriors</div><div class="music-artist">Imagine Dragons</div></div><span class="music-time">2:50</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">2</span><div><div class="music-title">Thunder</div><div class="music-artist">Imagine Dragons</div></div><span class="music-time">3:07</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">3</span><div><div class="music-title">Believer</div><div class="music-artist">Imagine Dragons</div></div><span class="music-time">3:24</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">4</span><div><div class="music-title">Legends Never Die</div><div class="music-artist">Against The Current</div></div><span class="music-time">2:56</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">5</span><div><div class="music-title">Natural</div><div class="music-artist">Imagine Dragons</div></div><span class="music-time">3:09</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">6</span><div><div class="music-title">Hall of Fame</div><div class="music-artist">The Script ft. will.i.am</div></div><span class="music-time">3:22</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">7</span><div><div class="music-title">Unstoppable</div><div class="music-artist">The Score</div></div><span class="music-time">3:18</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">8</span><div><div class="music-title">Champion</div><div class="music-artist">Fall Out Boy ft. RM</div></div><span class="music-time">3:26</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">9</span><div><div class="music-title">Whatever It Takes</div><div class="music-artist">Imagine Dragons</div></div><span class="music-time">3:21</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">10</span><div><div class="music-title">Centuries</div><div class="music-artist">Fall Out Boy</div></div><span class="music-time">3:49</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+    </div>
+
+    <div class="music-list" data-music-list="country">
+      <div class="music-track"><span class="music-rank">1</span><div><div class="music-title">Cruise</div><div class="music-artist">Florida Georgia Line</div></div><span class="music-time">3:24</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">2</span><div><div class="music-title">Tennessee Whiskey</div><div class="music-artist">Chris Stapleton</div></div><span class="music-time">4:53</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">3</span><div><div class="music-title">Body Like a Back Road</div><div class="music-artist">Sam Hunt</div></div><span class="music-time">2:51</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">4</span><div><div class="music-title">Meant to Be</div><div class="music-artist">Bebe Rexha ft. FGL</div></div><span class="music-time">2:43</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">5</span><div><div class="music-title">Die a Happy Man</div><div class="music-artist">Thomas Rhett</div></div><span class="music-time">3:33</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">6</span><div><div class="music-title">Wagon Wheel</div><div class="music-artist">Darius Rucker</div></div><span class="music-time">4:28</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">7</span><div><div class="music-title">House Party</div><div class="music-artist">Sam Hunt</div></div><span class="music-time">3:38</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">8</span><div><div class="music-title">Before He Cheats</div><div class="music-artist">Carrie Underwood</div></div><span class="music-time">3:19</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">9</span><div><div class="music-title">Chicken Fried</div><div class="music-artist">Zac Brown Band</div></div><span class="music-time">3:58</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">10</span><div><div class="music-title">Springsteen</div><div class="music-artist">Eric Church</div></div><span class="music-time">4:25</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+    </div>
+
+    <div class="music-list" data-music-list="pop">
+      <div class="music-track"><span class="music-rank">1</span><div><div class="music-title">Blinding Lights</div><div class="music-artist">The Weeknd</div></div><span class="music-time">3:20</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">2</span><div><div class="music-title">Levitating</div><div class="music-artist">Dua Lipa</div></div><span class="music-time">3:23</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">3</span><div><div class="music-title">Uptown Funk</div><div class="music-artist">Mark Ronson ft. Bruno Mars</div></div><span class="music-time">4:30</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">4</span><div><div class="music-title">Shake It Off</div><div class="music-artist">Taylor Swift</div></div><span class="music-time">3:39</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">5</span><div><div class="music-title">Happy</div><div class="music-artist">Pharrell Williams</div></div><span class="music-time">3:53</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">6</span><div><div class="music-title">Can't Stop the Feeling</div><div class="music-artist">Justin Timberlake</div></div><span class="music-time">3:56</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">7</span><div><div class="music-title">Good as Hell</div><div class="music-artist">Lizzo</div></div><span class="music-time">2:39</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">8</span><div><div class="music-title">Dynamite</div><div class="music-artist">BTS</div></div><span class="music-time">3:19</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">9</span><div><div class="music-title">24K Magic</div><div class="music-artist">Bruno Mars</div></div><span class="music-time">3:46</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+      <div class="music-track"><span class="music-rank">10</span><div><div class="music-title">Roar</div><div class="music-artist">Katy Perry</div></div><span class="music-time">3:43</span><button class="music-fav" type="button" aria-label="Favorite"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-6.7-4.35-9.33-7.02C-1.02 10.35 1.2 4.5 6.3 4.5c2.02 0 3.35 1.02 3.7 1.5.35-.48 1.68-1.5 3.7-1.5 5.1 0 7.32 5.85 3.63 9.48C18.7 16.65 12 21 12 21z"/></svg></button></div>
+    </div>
+  </div>
+
+  <div class="music-note">All songs are radio-edit clean versions. Song list subject to change.</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== FOOD MENU ========== -->
+<section class="section" id="food">
+  <div class="section-header fade-in">
+    <div class="section-badge">Nashville Eats</div>
+    <h2 class="section-title">Food Menu</h2>
+    <p class="section-subtitle">You're in Nashville. We're doing this right — hot chicken, BBQ, and all the fixings.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="food-grid stagger-children">
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Nashville Hot Chicken</div><div class="food-price">$14</div></div>
+      <p class="food-desc">The iconic Nashville classic. Crispy fried chicken tossed in our cayenne-spiced oil, served on white bread with pickles. Choose your heat level.</p>
+      <div class="food-heat"><span class="food-heat-dot active"></span><span class="food-heat-dot active"></span><span class="food-heat-dot active"></span><span class="food-heat-dot"></span><span class="food-heat-dot"></span></div>
+    </div>
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Hot Chicken Tenders</div><div class="food-price">$12</div></div>
+      <p class="food-desc">Hand-breaded chicken tenders with Nashville hot spice blend. Served with ranch, honey mustard, or our signature comeback sauce.</p>
+      <div class="food-heat"><span class="food-heat-dot active"></span><span class="food-heat-dot active"></span><span class="food-heat-dot"></span><span class="food-heat-dot"></span><span class="food-heat-dot"></span></div>
+    </div>
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Smoked Brisket Plate</div><div class="food-price">$16</div></div>
+      <p class="food-desc">12-hour smoked beef brisket with mac & cheese, coleslaw, and cornbread. Tennessee BBQ at its finest.</p>
+    </div>
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Hot Chicken Sandwich</div><div class="food-price">$13</div></div>
+      <p class="food-desc">Crispy hot chicken breast on a brioche bun with pickles, slaw, and spicy mayo. A Nashville staple.</p>
+      <div class="food-heat"><span class="food-heat-dot active"></span><span class="food-heat-dot active"></span><span class="food-heat-dot active"></span><span class="food-heat-dot active"></span><span class="food-heat-dot"></span></div>
+    </div>
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Loaded Fries</div><div class="food-price">$10</div></div>
+      <p class="food-desc">Crispy fries topped with pulled pork, cheese sauce, jalape&ntilde;os, and BBQ drizzle. Gaming fuel.</p>
+    </div>
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Southern Sweet Tea</div><div class="food-price">$5</div></div>
+      <p class="food-desc">Ice cold, brewed fresh daily. The way it's supposed to be — sweet enough to make your dentist cry.</p>
+    </div>
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Waffle Fries & Dip</div><div class="food-price">$8</div></div>
+      <p class="food-desc">Golden waffle fries with your choice of queso, ranch, or Nashville hot sauce for dipping.</p>
+    </div>
+    <div class="food-card fade-in">
+      <div class="food-header"><div class="food-name">Banana Pudding</div><div class="food-price">$7</div></div>
+      <p class="food-desc">Classic Southern dessert with vanilla wafers, fresh bananas, and homemade whipped cream. End on a sweet note.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ========== SPONSORS ========== -->
+<section class="section" id="sponsors">
+  <div class="section-header fade-in">
+    <div class="section-badge">Our Partners</div>
+    <h2 class="section-title">Sponsors</h2>
+    <p class="section-subtitle">NECS 2026 is made possible by these incredible partners.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="sponsors-row compact fade-in">
+    <div class="sponsor-item">
+      <span class="sponsor-logo">TG</span>
+      <span>Titan Gaming</span>
+    </div>
+    <div class="sponsor-item">
+      <span class="sponsor-logo">NG</span>
+      <span>NexGen Peripherals</span>
+    </div>
+    <div class="sponsor-item">
+      <span class="sponsor-logo">VD</span>
+      <span>VoltDrink</span>
+    </div>
+    <div class="sponsor-item">
+      <span class="sponsor-logo">AD</span>
+      <span>Apex Displays</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CART DRAWER ========== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header">
+    <div>
+      <div class="cart-title">Your Cart</div>
+      <div class="cart-subtitle">NECS Merch</div>
+    </div>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">Your cart is empty.</div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cartTotal">$0</span>
+    </div>
+    <button class="cart-checkout" id="cartCheckout">Checkout</button>
+  </div>
+</aside>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <img src="images/logo.png" alt="NECS 2026" class="footer-brand-logo">
+        <p class="footer-brand-text">The National Esports Championship Series brings together the best competitive gamers for three days of elite competition at Bridgestone Arena in Nashville, Tennessee.</p>
+        <p class="footer-brand-slogan">Where Gaming Meets Music City</p>
+      </div>
+      <div class="footer-col">
+        <h4>Event</h4>
+        <a href="#games">Games</a>
+        <a href="#teams">Teams</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#merch">Merch</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#venue">Venue</a>
+        <a href="#music">Music</a>
+        <a href="#food">Food Menu</a>
+        <a href="#sponsors">Partners</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#" onclick="showToast('Opening Twitter...');return false;">Twitter / X</a>
+        <a href="#" onclick="showToast('Opening Instagram...');return false;">Instagram</a>
+        <a href="#" onclick="showToast('Opening Discord...');return false;">Discord</a>
+        <a href="#" onclick="showToast('Opening Twitch...');return false;">Twitch</a>
+        <a href="#" onclick="showToast('Opening YouTube...');return false;">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 National Esports Championship Series. All rights reserved. Not affiliated with Riot Games, Psyonix, or Nintendo.</div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social" aria-label="Twitter" onclick="showToast('Opening Twitter...');return false;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="footer-social" aria-label="Instagram" onclick="showToast('Opening Instagram...');return false;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="footer-social" aria-label="Discord" onclick="showToast('Opening Discord...');return false;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== CHATBOT ========== -->
+<button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chatbot">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+</button>
+<div class="chatbot-window" id="chatbotWindow">
+  <div class="chatbot-header">
+    <div class="chatbot-header-left">
+      <div class="chatbot-header-avatar">N</div>
+      <div>
+        <div class="chatbot-header-name">NECS Bot</div>
+        <div class="chatbot-header-status">Online</div>
+      </div>
+    </div>
+    <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+  </div>
+  <div class="chatbot-messages" id="chatMessages">
+    <div class="chat-msg bot">Hey there! Welcome to NECS 2026. I can help you with tickets, schedule info, venue details, food recommendations, or anything else about the event. What can I help with?</div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" class="chatbot-input" id="chatInput" placeholder="Ask about NECS 2026..." autocomplete="off">
+    <button class="chatbot-send" id="chatSend" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ========== TOAST NOTIFICATION ========== -->
+<div id="toast"></div>
+
+<!-- ========== ALL THE JAVASCRIPT ========== -->
+<!-- buckle up this is a lot of js -->
+
+<script src="script.js"></script>
+</body>
+</html>
